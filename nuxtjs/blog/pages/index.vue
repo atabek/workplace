@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>Get the laterst tech news!</h1>
     </section>
-    <PostList />
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
@@ -12,6 +12,15 @@ import PostList from "@/components/Posts/PostList.vue";
 export default {
   components: {
     PostList
+  },
+  data() {
+    return {
+      loadedPosts: [
+        { id: '1', title: 'First Post', previewText: 'This is our first post!', thumbnail: "https://www.canadianlawyermag.com/staticcontent/images/img2974_Hero_LegalTech2019.jpg"},
+        { id: '2', title: 'Second Post', previewText: 'This is our second post!', thumbnail: "https://www.canadianlawyermag.com/staticcontent/images/img2974_Hero_LegalTech2019.jpg"},
+        { id: '3', title: 'Third Post', previewText: 'This is our third post!', thumbnail: "https://www.canadianlawyermag.com/staticcontent/images/img2974_Hero_LegalTech2019.jpg"}
+      ]
+    }
   }
 };
 </script>
