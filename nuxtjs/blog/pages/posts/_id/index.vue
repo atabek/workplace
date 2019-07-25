@@ -1,12 +1,12 @@
 <template>
   <div class="single-post-page">
     <section class="post">
-      <h1>Title of the Post</h1>
+      <h1>{{ loadedPost.title}}</h1>
       <div class="post-details">
-        <div>Last updated on XXX</div>
-        <div>Writen by NAME</div>
+        <div class="post-detail">Last updated on {{ loadedPost.updatedDate}}</div>
+        <div class="post-detail">Writen by {{ loadedPost.author }}</div>
       </div>
-      <p>Content of the post</p>
+      <p>{{ loadedPost.content}}</p>
     </section>
     <section class="post-feedback">
       <div>
@@ -16,6 +16,27 @@
     </section>
   </div>
 </template>
+
+<script>
+export default {
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPost: {
+          id: '1',
+          title: 'Post ID: ' + context.route.params.id,
+          updatedDate: new Date(),
+          author: 'Atabek',
+          previewText: 'This is our first post!',
+          thumbnail: "https://www.canadianlawyermag.com/staticcontent/images/img2974_Hero_LegalTech2019.jpg"
+        }
+      })
+    }, 1500)
+  }
+}
+</script>
+
+
 <style scoped>
 .single-post-page {
   padding: 30px;
