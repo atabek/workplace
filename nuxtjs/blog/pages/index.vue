@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>Get the laterst tech news!</h1>
     </section>
-    <PostList :posts="loadedPosts" />
+    <PostList :posts="loadedPosts"/>
   </div>
 </template>
 
@@ -13,16 +13,26 @@ export default {
   components: {
     PostList
   },
-  data() {
-    return {
-      loadedPosts: [
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPosts: [
         { id: '1', title: 'First Post', previewText: 'This is our first post!', thumbnail: "https://www.canadianlawyermag.com/staticcontent/images/img2974_Hero_LegalTech2019.jpg"},
         { id: '2', title: 'Second Post', previewText: 'This is our second post!', thumbnail: "https://www.canadianlawyermag.com/staticcontent/images/img2974_Hero_LegalTech2019.jpg"},
         { id: '3', title: 'Third Post', previewText: 'This is our third post!', thumbnail: "https://www.canadianlawyermag.com/staticcontent/images/img2974_Hero_LegalTech2019.jpg"}
       ]
-    }
+      })
+    }, 1500)
+  },
+  // data() {
+  //   return {
+  //     loadedPosts: []
+  //   }
+  // },
+  created() {
+    
   }
-};
+}
 </script>
 
 <style scope>
@@ -31,7 +41,7 @@ export default {
   position: relative;
   padding: 30px;
   box-sizing: border-box;
-  background-image: url('~assets/images/main-page-background.jpg');
+  background-image: url("~assets/images/main-page-background.jpg");
   background-position: center;
   background-size: cover;
 }
