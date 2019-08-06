@@ -3,9 +3,10 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Passport\HasApiTokens;
+
 
 class User extends Authenticatable
 {
@@ -14,13 +15,12 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
-
+    
     protected $hidden = [
         'password', 'remember_token',
     ];
     
-    public function orders()
-    {
+    public function orders(){
         return $this->hasMany(Order::class);
     }
 }
