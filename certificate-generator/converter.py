@@ -13,11 +13,10 @@ def calculageAverage(subjectMarks, subjects, subjectCredit):
   total = 0
   sumCredits = 0
   for i in range(len(subjectMarks)):
-    # credit * mark
     total = total + subjectCredit[subjects[i]] * subjectMarks[i]
     if(subjectMarks[i] != 0):
       sumCredits = sumCredits + subjectCredit[subjects[i]]
-  return round(total/sumCredits)
+  return round(total/sumCredits, 1)
 # print(glob.glob('*.csv'))
 # termOrYear = input("Is it term or year report? Type t for term and y for year:")
 # while True:
@@ -27,10 +26,10 @@ def calculageAverage(subjectMarks, subjects, subjectCredit):
 #     termOrYear = input("Is it term or year report? Type t for term and y for year:")
 path = os.getcwd()
 try:
-  convertedDir = path + "/converted"
+  convertedDir = path + "/webapp/converted"
   if(os.path.isdir(convertedDir)):
     os.rmdir(convertedDir)
-  os.mkdir(path + '/converted')
+  os.mkdir(path + '/webapp/converted')
 except OSError:
   print ("Creation of the directory %s failed" % path)
 else:
@@ -62,7 +61,7 @@ subjectMarks = []
 for file in source_files:
   numlines = numberOfLines(file)
   read_file = open(file, "r")
-  write_file = open("converted_" + file, "w+")
+  write_file = open("webapp/converted/" + file, "w+")
   for line in read_file:
     n = n + 1
     if (n == 2):
@@ -81,7 +80,7 @@ for file in source_files:
       titles.append("Class")
       titles.append("Teacher")
       titles.append("Term")
-      titles.append("School Year")
+      titles.append("Year")
       joinedString = ",".join(titles) + '\n'
       wholeString = joinedString
     if (n >= 13 and n < numlines):
@@ -96,10 +95,6 @@ for file in source_files:
         if marks[i] == "" or marks[i] == '-':
           marks[i] = str(0)
       subjectMarks = [float(m) for m in marks[:-5]]
-      # else:
-        # marks[i] = str(round(float(marks[i])))
-      # average1 = splittedLine[-5]
-      # average2 = splittedLine[-4]
       average = calculageAverage(subjectMarks, subjects, subjectCredit)
       marks[-5] = str(average)
       marks[-4] = splittedLine[-3]
@@ -116,9 +111,19 @@ for file in source_files:
 
   write_file.close()
   read_file.close()
-    # with open(f) as convertedFile:
-    #     reader = csv.DictReader(convertedFile)
-    #     rows = list(reader)
+  with open("webapp/converted/" + file) as convertedFile:
+    reader = csv.DictReader(convertedFile)
+    rows = list(reader)
+  jsonFilename = file.replace("csv", "json")
+  with open("webapp/converted/" + jsonFilename, 'w') as convertedJsonFile:
+    json.dump(rows, convertedJsonFile)
+  
+  # with open("weight.csv", "r") as src:
+  #   reader = csv.DictReader(src)
+  #   rows = list(reader)
+  #   for r in rows:
+  #     print(r)
+  # with open("weight.json", "w") as dest:
+  #   json.dump(rows, dest)
 
-    # with open('test.json', 'w') as convertedJsonFile:
-    #     json.dump(rows, convertedJsonFile)
+    

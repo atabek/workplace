@@ -75,10 +75,10 @@ html, body, * {
   color: red;
 }
 .school-header-info {
-  border-top: 1px dashed;
-  border-bottom: 1px dashed;
+  border-top: 0.1em dashed;
+  border-bottom: 0.1em dashed;
   font-size: 8px;
-  padding: 0 7%;
+  padding: 3px 7%;
 }
 .school-header-info-bank {
   display: flex;
@@ -92,6 +92,11 @@ html, body, * {
   text-transform: uppercase;
   text-align: center;
   color: red;
+}
+h1 {
+  font-family: Courier, monospace;
+  font-weight: bold;
+  font-size: 2.5rem;
 }
 .report-card-wrapper {
   position: relative;
@@ -197,7 +202,7 @@ html, body, * {
   display: flex;
   justify-content: space-between;
   padding: 10px 35%;
-  border-top: 1px dashed;
+  border-top: 0.05em dashed;
 }
 .footer-logos img{
   display: block;
@@ -208,4 +213,7 @@ html, body, * {
 }
 .footer-logos .ap-logo {
   width: 55px;
+}
+@media print {
+  .page-break {page-break-after: always;}
 }
