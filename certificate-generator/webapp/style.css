@@ -188,10 +188,10 @@ h1 {
 }
 .report-card-grading .report-card-grading-item {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 14px;
+  font-size: 12px;
 }
 .report-card-signatures {
-  padding: 0 20%;
+  padding: 0 15%;
   display: flex;
   justify-content: space-between;
 }
@@ -204,6 +204,14 @@ h1 {
   padding: 10px 35%;
   border-top: 0.05em dashed;
 }
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-top: -80px;
+}
 .footer-logos img{
   display: block;
   width: 100%;
@@ -213,6 +221,10 @@ h1 {
 }
 .footer-logos .ap-logo {
   width: 55px;
+}
+.wrapper {
+  position: relative;
+  height: 1000px;
 }
 @media print {
   .page-break {page-break-after: always;}

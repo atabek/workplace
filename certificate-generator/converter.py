@@ -118,12 +118,17 @@ for file in source_files:
   with open("webapp/converted/" + jsonFilename, 'w') as convertedJsonFile:
     json.dump(rows, convertedJsonFile)
   
-  # with open("weight.csv", "r") as src:
-  #   reader = csv.DictReader(src)
-  #   rows = list(reader)
-  #   for r in rows:
-  #     print(r)
-  # with open("weight.json", "w") as dest:
-  #   json.dump(rows, dest)
+  with open("weightToConvert.csv", "w") as weightToConvertFile:
+    weightToConvertFile.write("Subjectname,Credit,SubjectnameLong\n")
+    with open("weight.csv", "r") as weightCsv:
+      for line in weightCsv:
+        weightToConvertFile.write(line)
+  
+  with open("weightToConvert.csv") as weightToConvertFile:
+    reader = csv.DictReader(weightToConvertFile)
+    rows = list(reader)
+  with open("webapp/converted/weight.json", 'w') as convertedJsonFile:
+    json.dump(rows, convertedJsonFile)
+
 
     

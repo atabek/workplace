@@ -10,7 +10,7 @@
 </head>
 <body>
   <div id="app">
-    <div v-for="student in studentsData">
+    <div v-for="student in studentsData" class="wrapper">
       <div class="header">
         <div class="container">
           <div class="school-name mb-10">
@@ -78,17 +78,17 @@
                     <td class="table-header">Subject</td>
                     <td class="table-header" colspan="2">Average</td>
                   </thead>
-                  <tbody class="table-body">
-                    <td class="table-body-subject">Art and Design</td>
-                    <td class="table-body-mark">90</td>
-                    <td class="table-body-mark">A*</td>
+                  <tbody class="table-body" v-for="mark, subject in getStudentSubject(student)">
+                    <td class="table-body-subject">{{subject}}</td>
+                    <td class="table-body-mark">{{mark}}</td>
+                    <td class="table-body-mark">{{getLetterGrade(mark)}}</td>
                   </tbody>
                   <tfoot></tfoot>
                 </table>
               </div>
             </div>
           </div>
-          <div class="report-card-grading mb-30">
+          <div class="report-card-grading mb-40">
             <div class="report-card-grading-item"><span>Grading Criteria:</span></div>
             <div class="report-card-grading-item"><span>+90</span></div>
             <div class="report-card-grading-item"><span>(A*),</span></div>
