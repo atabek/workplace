@@ -18,10 +18,10 @@
               <img v-bind:src="'uwis-logo.jpg'" alt="UWIS school logo">
             </div>
             <div class="school-name-item">
-              <div class="school-name-item-level-1">Международная школа</span></div>
-              <div class="school-name-item-level-1">&laquo;Юнайтед Ворлд Интернэшнл Скул&raquo;</span></div>
-              <div class="school-name-item-level-2">&#40;Аккредитованные программы Cambridge Assessment</div>
-              <div class="school-name-item-level-2">и Advanced Placement&#41;</div>
+              <div class="school-name-item-level-1"><span>Международная школа</span></div>
+              <div class="school-name-item-level-1"><span>&laquo;Юнайтед Ворлд Интернэшнл Скул&raquo;</span></div>
+              <div class="school-name-item-level-2"><span>&#40;Аккредитованные программы Cambridge Assessment</span></div>
+              <div class="school-name-item-level-2"><span>и Advanced Placement&#41;</span></div>
             </div>
             <div class="school-name-item">
               <div class="school-name-item-level-1"><span>World International School</span></div>
@@ -79,7 +79,7 @@
                     <td class="table-header" colspan="2">Average</td>
                   </thead>
                   <tbody class="table-body" v-for="mark, subject in getStudentSubject(student)">
-                    <td class="table-body-subject">{{subject}}</td>
+                    <td class="table-body-subject">{{getSubjectNameLong(subject)}}</td>
                     <td class="table-body-mark">{{mark}}</td>
                     <td class="table-body-mark">{{getLetterGrade(mark)}}</td>
                   </tbody>

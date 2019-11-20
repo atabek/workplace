@@ -56,6 +56,16 @@ new Vue({
         letter = "G"
       }
       return letter
+    },
+    getSubjectNameLong(shortName) {
+      let longName = ""
+      for (let i = 0; i < this.subjects.length; i++) {
+        if (!this.subjects[i].Subjectname.localeCompare(shortName)) {
+          longName = this.subjects[i].SubjectnameLong
+          break;
+        }
+      }
+      return longName
     }
   }
 })

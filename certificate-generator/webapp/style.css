@@ -69,12 +69,16 @@ html, body, * {
 }
 .school-name-item-level-1 {
   font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .school-name-item-level-2 {
   font-size: 13px;
+  font-family: Helvetica, sans-serif;
+  letter-spacing: -1px;
   color: red;
 }
 .school-header-info {
+  font-family: Arial, Helvetica, sans-serif;
   border-top: 0.1em dashed;
   border-bottom: 0.1em dashed;
   font-size: 8px;
@@ -139,6 +143,7 @@ h1 {
   padding: 0 20%;
   display: flex;
   justify-content: space-around;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .report-card-student-absences {
   display: flex;
@@ -215,6 +220,7 @@ h1 {
 .footer-logos img{
   display: block;
   width: 100%;
+  opacity: .5;
 }
 .footer-logos .cambridge-logo {
   width: 150px;
