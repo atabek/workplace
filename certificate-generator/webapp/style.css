@@ -26,6 +26,18 @@ html, body, * {
 .mb-60 {
   margin-bottom: 60px;
 }
+.mb-80 {
+  margin-bottom: 80px;
+}
+.mb-100 {
+  margin-bottom: 100px;
+}
+.mb-120 {
+  margin-bottom: 120px;
+}
+.mb-140 {
+  margin-bottom: 140px;
+}
 .mt-5 {
   margin-top: 5px;
 }
@@ -177,14 +189,14 @@ h1 {
   border-collapse: collapse;
   width: 90%;
 }
-.table-header {
+.table-header, .table-body-mark, .table-body-weight{
   text-align: center;
+}
+.table-body-letter {
+  padding-left: 7px;
 }
 .table-body-subject {
-  text-align: left;
-}
-.table-body-mark {
-  text-align: center;
+  width: 60%;
 }
 .report-card-grading {
   padding: 0 10%;
@@ -208,14 +220,6 @@ h1 {
   justify-content: space-between;
   padding: 10px 35%;
   border-top: 0.05em dashed;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  margin-top: -80px;
 }
 .footer-logos img{
   display: block;

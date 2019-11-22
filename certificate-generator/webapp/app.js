@@ -6,15 +6,15 @@ new Vue({
     studentsData: [],
     notNeeded: ["Avg", "Class", "E", "Fullname", "LA", "Teacher", "Term", "U", "Year"]
   },
-  mounted: function () {
+  created: function () {
     let now = new Date()
     this.today = now.toLocaleDateString("en-US")
-    fetch("converted/" + "1.9A.json")
+    fetch("converted/" + "1.9C.json")
       .then(response => response.json())
       .then((data) => {
         this.studentsData = data
       })
-    fetch("converted/weight.json")
+    fetch("converted/" + "weight.json")
       .then(response => response.json())
       .then((data) => {
         this.subjects = data
@@ -66,6 +66,16 @@ new Vue({
         }
       }
       return longName
+    },
+    getSubjectCredit: function(shortName) {
+      let credit = 1
+      for (let i = 0; i < this.subjects.length; i++) {
+        if (!this.subjects[i].Subjectname.localeCompare(shortName)) {
+          credit = this.subjects[i].Credit
+          break;
+        }
+      }
+      return credit
     }
   }
 })

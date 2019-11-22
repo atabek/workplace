@@ -10,7 +10,7 @@
 </head>
 <body>
   <div id="app">
-    <div v-for="student in studentsData" class="wrapper">
+    <div v-for="student in studentsData">
       <div class="header">
         <div class="container">
           <div class="school-name mb-10">
@@ -48,7 +48,7 @@
           </div>
         </div>
       </div>
-      <div class="content">
+      <div class="content mb-120">
         <div class="container">
           <div class="report-card-title mt-40 mb-60">
             <h1>Student's report card</h1>
@@ -75,20 +75,22 @@
                 <table class="mt-10" border="1">
                   <caption class="report-card-student-gpa mb-10">GPA: {{student.Avg}}</caption>
                   <thead>
-                    <td class="table-header">Subject</td>
+                    <td class="table-header table-header-subject">Subject</td>
+                    <td class="table-header">Weight</td>
                     <td class="table-header" colspan="2">Average</td>
                   </thead>
                   <tbody class="table-body" v-for="mark, subject in getStudentSubject(student)">
-                    <td class="table-body-subject">{{getSubjectNameLong(subject)}}</td>
-                    <td class="table-body-mark">{{mark}}</td>
-                    <td class="table-body-mark">{{getLetterGrade(mark)}}</td>
+                    <td class="table-body-subject" v-if="mark != '0'">{{getSubjectNameLong(subject)}}</td>
+                    <td class="table-body-weight" v-if="mark != '0'">{{getSubjectCredit(subject)}}</td>
+                    <td class="table-body-mark" v-if="mark != '0'">{{mark}}</td>
+                    <td class="table-body-letter" v-if="mark != '0'">{{getLetterGrade(mark)}}</td>
                   </tbody>
                   <tfoot></tfoot>
                 </table>
               </div>
             </div>
           </div>
-          <div class="report-card-grading mb-40">
+          <div class="report-card-grading">
             <div class="report-card-grading-item"><span>Grading Criteria:</span></div>
             <div class="report-card-grading-item"><span>+90</span></div>
             <div class="report-card-grading-item"><span>(A*),</span></div>
@@ -107,7 +109,7 @@
             <div class="report-card-grading-item"><span>+20</span></div>
             <div class="report-card-grading-item"><span>(G)</span></div>
           </div>
-          <div class="report-card-signatures mb-60">
+          <div class="report-card-signatures mt-30">
             <div class="report-card-signature-item"><span>Coordinator :</span></div>
             <div class="report-card-signature-item"><span>School Principal :</span></div>
           </div>
