@@ -67,7 +67,19 @@ html, body, * {
   max-width: 900px;
   margin: 0 auto;
 }
+.report-selection-menu {
+  display: flex;
+  justify-content: space-around;
+  height: 100px;
+  width: 75%;
+  margin: 0 auto;
+}
+.report-selection-menu-item {
+  width: 140px;
+  padding-top: 20px;
+}
 .school-name {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -215,6 +227,11 @@ h1 {
 .report-card-signatures .report-card-signature-item {
   font-family: 'Courier New', Courier, monospace;
 }
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 .footer-logos {
   display: flex;
   justify-content: space-between;
@@ -238,4 +255,5 @@ h1 {
 }
 @media print {
   .page-break {page-break-after: always;}
+  .no-print, .no-print * { display: none !important;}
 }

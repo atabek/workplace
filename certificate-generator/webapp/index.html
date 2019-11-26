@@ -10,7 +10,31 @@
 </head>
 <body>
   <div id="app">
-    <div v-for="student in studentsData">
+    <div class="no-print">
+      <div class="container">
+        <div class="report-selection-menu">
+          <div class="report-selection-menu-item">
+            <span>Select term:</span>
+            <select name="terms" @change="termOnChange($event)">
+              <option v-for="term in terms" :value="term" :key="term">{{term}}</option>
+            </select>
+          </div>
+          <div class="report-selection-menu-item">
+            <span>Select grade:</span>
+            <select name="grades" @change="gradeOnChange($event)">
+              <option v-for="grade in grades" :value="grade" :key="grade">{{grade}}</option>
+            </select> 
+          </div>
+          <div class="report-selection-menu-item">
+            <span>Select class:</span>
+            <!-- <select name="gradeLetters" @change="gradeLetterOnChange($event)">
+              <option v-for="gradLetter in gradeLetters" :value="gradeLetter" :key="gradeLetter">{{gradeLetter}}</option>
+            </select>  -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div v-for="student in studentsData" class="wrapper">
       <div class="header">
         <div class="container">
           <div class="school-name mb-10">

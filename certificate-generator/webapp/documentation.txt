@@ -1,0 +1,11 @@
+Requirements:
+- python version 3 should be installed on the system.
+- run the following command in your cmd to test if python is installed correctly:
+  python --version
+- if the output of the above command gives: Python 3.*.*, then go to the steps section below.
+- if the output of the above command does not give: Python 3.*.*, then check your system environment variables
+  to see if 'python' is in your path.
+
+
+Steps to produce report cards:
+
