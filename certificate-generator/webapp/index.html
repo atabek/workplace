@@ -39,7 +39,7 @@
         <div class="container">
           <div class="school-name mb-10">
             <div class="school-name-background">
-              <img v-bind:src="'uwis-logo.jpg'" alt="UWIS school logo">
+              <img :src="'./assets/uwis-logo.jpg'" alt="UWIS school logo">
             </div>
             <div class="school-name-item">
               <div class="school-name-item-level-1"><span>Международная школа</span></div>
@@ -79,7 +79,7 @@
           </div>
           <div class="report-card-wrapper">
             <div class="report-card-background">
-              <img v-bind:src="'uwis-logo.jpg'" alt="UWIS school logo">
+              <img :src="'./assets/uwis-logo.jpg'" alt="UWIS school logo">
             </div>
             <div class="report-card-student-info">
               <div class="report-card-student-fullname mb-20">{{student.Fullname}}</div>
@@ -143,10 +143,10 @@
         <div class="container">
           <div class="footer-logos">
             <div class="cambridge-logo">
-              <img src="cambridge.jpg" alt="Cambridge Assessment International Education">
+              <img :src="'./assets/cambridge.jpg'" alt="Cambridge Assessment International Education">
             </div>
             <div class="ap-logo">
-              <img src="ap.jpg" alt="Advanced Placement">
+              <img :src="'./assets/ap.jpg'" alt="Advanced Placement">
             </div>
           </div>
         </div>
@@ -154,6 +154,6 @@
       <div class="page-break"></div>
     </div>
   </div>
-  <script src="app.js"></script>
+  <script src="./js/app.js"></script>
 </body>
 </html>

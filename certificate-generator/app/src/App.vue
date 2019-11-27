@@ -29,7 +29,7 @@
         <div class="container">
           <div class="school-name mb-10">
             <div class="school-name-background">
-              <img v-bind:src="'uwis-logo.jpg'" alt="UWIS school logo">
+              <img :src="uwisLogo" alt="UWIS school logo">
             </div>
             <div class="school-name-item">
               <div class="school-name-item-level-1"><span>Международная школа</span></div>
@@ -69,7 +69,7 @@
           </div>
           <div class="report-card-wrapper">
             <div class="report-card-background">
-              <img v-bind:src="'uwis-logo.jpg'" alt="UWIS school logo">
+              <img :src="uwisLogo" alt="UWIS school logo">
             </div>
             <div class="report-card-student-info">
               <div class="report-card-student-fullname mb-20">{{student.Fullname}}</div>
@@ -135,10 +135,10 @@
         <div class="container">
           <div class="footer-logos">
             <div class="cambridge-logo">
-              <img src="cambridge.jpg" alt="Cambridge Assessment International Education">
+              <img :src="cambridgeLogo" alt="Cambridge Assessment International Education">
             </div>
             <div class="ap-logo">
-              <img src="ap.jpg" alt="Advanced Placement">
+              <img :src="apLogo" alt="Advanced Placement">
             </div>
           </div>
         </div>
@@ -148,27 +148,37 @@
   </div>
 </template>
 <script>
+
+import apLogo from './assets/ap.jpg'
+import cambridgeLogo from './assets/cambridge.jpg'
+import uwisLogo from './assets/uwis-logo.jpg'
+
 export default {
-  name: "main",
+  name: "app",
   data() {
     return {
+      apLogo: apLogo,
+      cambridgeLogo: cambridgeLogo,
+      uwisLogo: uwisLogo,
       today: new Date(),
       subjects: [],
       studentsData: [],
       notNeeded: ["Avg", "Class", "E", "Fullname", "LA", "Teacher", "Term", "U", "Year"],
       terms: ["-", "1", "2", "3"],
-      gradeLetters: ["-", "a", "b", "c"],
+      gradeLetters: ["-", "a", "b", "c", "d"],
       grades: ["-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+      selectedReport: "",
+      termSelected: false,
+      gradeSelected: false,
+      gradeLetterSelected: false,
+      term: "",
+      grade: "",
+      gradeClass: ""
     }
   },
   created: function () {
     let now = new Date()
-    this.today = now.toLocaleDateString("en-US")
-    fetch("converted/" + "1.9C.json")
-      .then(response => response.json())
-      .then((data) => {
-        this.studentsData = data
-      })
+    this.today = now.toLocaleDateString("en-GB")
     fetch("converted/" + "weight.json")
       .then(response => response.json())
       .then((data) => {
@@ -233,13 +243,43 @@ export default {
       return credit
     },
     termOnChange(event) {
-      console.log("term:", event.target.value)
+      if (event.target.value == '-') {
+        console.log("choose a term")
+        this.termSelected = false
+      } else {
+        this.termSelected = true
+        this.term = event.target.value
+        this.checkTermGradeLetter(this.termSelected, this.gradeSelected, this.gradeLetterSelected)
+      }
     },
     gradeOnChange(event) {
-      console.log("grade:", event.target.value)
+      if (event.target.value == '-') {
+        console.log("choose a grade")
+        this.gradeSelected = false
+      } else {
+        this.gradeSelected = true
+        this.grade = event.target.value
+        this.checkTermGradeLetter(this.termSelected, this.gradeSelected, this.gradeLetterSelected)
+      }
     },
     gradeLetterOnChange(event) {
-      console.log("class: ", event.target.value)
+      if (event.target.value == '-') {
+        console.log("choose a grade letter")
+        this.gradeLetterSelected = false
+      } else {
+        this.gradeLetterSelected = true
+        this.gradeClass = event.target.value
+        this.checkTermGradeLetter(this.termSelected, this.gradeSelected, this.gradeLetterSelected)
+      }
+    },
+    checkTermGradeLetter(termSelected, gradeSelected, gradeLetterSelected) {
+      if (termSelected && gradeSelected && gradeLetterSelected) {
+        fetch("converted/" + this.term + "." + this.grade + this.gradeClass + ".json")
+          .then(response => response.json())
+          .then((data) => {
+            this.studentsData = data
+          })
+      }
     }
   }
 }
