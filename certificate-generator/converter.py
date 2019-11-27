@@ -16,20 +16,23 @@ def calculageAverage(subjectMarks, subjects, subjectCredit):
     total = total + subjectCredit[subjects[i]] * subjectMarks[i]
     if(subjectMarks[i] != 0):
       sumCredits = sumCredits + subjectCredit[subjects[i]]
+  if (sumCredits == 0):
+    return 0
   return round(total/sumCredits, 1)
-# print(glob.glob('*.csv'))
-# termOrYear = input("Is it term or year report? Type t for term and y for year:")
-# while True:
-#   if (termOrYear == "t" or  termOrYear == "y"):
-#     break
-#   else:
-#     termOrYear = input("Is it term or year report? Type t for term and y for year:")
+
+termSelected = input("Which term is it?")
+while True:
+  if (termSelected == "1" or  termSelected == "2" or termSelected == "3"):
+    break
+  else:
+    termSelected = input("Which term is it?")
+
 path = os.getcwd()
 try:
   convertedDir = path + "/webapp/converted"
   if(os.path.isdir(convertedDir)):
     os.rmdir(convertedDir)
-  os.mkdir(path + '/webapp/converted')
+  os.mkdir(path + '/webapp/converted/')
 except OSError:
   print ("Creation of the directory %s failed" % path)
 else:
@@ -51,11 +54,13 @@ studentFullName = ""
 joinedString = ","
 n = 0
 wholeString = ""
-source_files = [
-  "1.9A.csv",
-  "1.9B.csv",
-  "1.9C.csv"
-]
+
+# source_files = glob.glob(termSelected + '.[1-9]*.csv')
+source_files = {
+  "1.10A.csv"
+}
+
+
 subjects = []
 subjectMarks = []
 for file in source_files:
@@ -95,6 +100,7 @@ for file in source_files:
         if marks[i] == "" or marks[i] == '-':
           marks[i] = str(0)
       subjectMarks = [float(m) for m in marks[:-5]]
+      print(firstName, lastName)
       average = calculageAverage(subjectMarks, subjects, subjectCredit)
       marks[-5] = str(average)
       marks[-4] = splittedLine[-3]

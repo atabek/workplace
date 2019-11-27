@@ -8,4 +8,26 @@ Requirements:
 
 
 Steps to produce report cards:
+1.a) If you're producing term 1 report card, then save the file as 1.xls when downloading the file from edupage.
+1.b) If you're producing term 2 report card, then save the file as 2.xls when downloading the file from edupage.
+1.c) If you're producing term 3 report card, then save the file as 3.xls when downloading the file from edupage.
 
+2.
+You need to convert {1,2,3}.xls to a csv file so that converter.py is able to convert .xls file output to correct format.
+Open cmd, navigate to .xls file and run .vbs script as following:
+excel2csv.vbs 1.xls
+if you want to get first term report card.
+The command fill output several .csv files.
+
+3. From your cmd window, run the following command:
+python converter.py
+
+4. Then, run the following command:
+python -m http.server
+This is to run a web server.
+
+5. Go to http://localhost:8000/webapp with your chrome browser
+6. Select the term, grade, class to get the report card
+7. Press Ctrl + P and change the settings so that header and footer is set to none.
+Also, change the margins of the page.
+8. Print the document as pdf or from your printer.

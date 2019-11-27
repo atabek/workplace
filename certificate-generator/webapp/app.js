@@ -6,8 +6,8 @@ new Vue({
     studentsData: [],
     notNeeded: ["Avg", "Class", "E", "Fullname", "LA", "Teacher", "Term", "U", "Year"],
     terms: ["-", "1", "2", "3"],
+    gradeLetters: ["-", "a", "b", "c"],
     grades: ["-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
-    gradeLetters: ["-", "a", "b", "c"]
   },
   created: function () {
     let now = new Date()
@@ -87,7 +87,7 @@ new Vue({
       console.log("grade:", event.target.value)
     },
     gradeLetterOnChange(event) {
-      console.log("class:", event.target.value)
+      console.log("class: ", event.target.value)
     }
   }
 })
