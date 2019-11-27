@@ -6,7 +6,7 @@ new Vue({
     studentsData: [],
     notNeeded: ["Avg", "Class", "E", "Fullname", "LA", "Teacher", "Term", "U", "Year"],
     terms: ["-", "1", "2", "3"],
-    gradeLetters: ["-", "a", "b", "c"],
+    gradeLetters: ["-", "a", "b", "c", "d"],
     grades: ["-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
     selectedReport: "",
     termSelected: false,

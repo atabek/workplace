@@ -55,11 +55,7 @@ joinedString = ","
 n = 0
 wholeString = ""
 
-# source_files = glob.glob(termSelected + '.[1-9]*.csv')
-source_files = {
-  "1.10A.csv"
-}
-
+source_files = glob.glob(termSelected + '.[1-9]*.csv')
 
 subjects = []
 subjectMarks = []
@@ -100,7 +96,6 @@ for file in source_files:
         if marks[i] == "" or marks[i] == '-':
           marks[i] = str(0)
       subjectMarks = [float(m) for m in marks[:-5]]
-      print(firstName, lastName)
       average = calculageAverage(subjectMarks, subjects, subjectCredit)
       marks[-5] = str(average)
       marks[-4] = splittedLine[-3]
