@@ -18,7 +18,7 @@ new Vue({
   },
   created: function () {
     let now = new Date()
-    this.today = now.toLocaleDateString("en-US")
+    this.today = now.toLocaleDateString("en-GB")
     fetch("converted/" + "weight.json")
       .then(response => response.json())
       .then((data) => {
