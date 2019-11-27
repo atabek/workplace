@@ -8,15 +8,17 @@ new Vue({
     terms: ["-", "1", "2", "3"],
     gradeLetters: ["-", "a", "b", "c"],
     grades: ["-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+    selectedReport: "",
+    termSelected: false,
+    gradeSelected: false,
+    gradeLetterSelected: false,
+    term: "",
+    grade: "",
+    gradeClass: ""
   },
   created: function () {
     let now = new Date()
     this.today = now.toLocaleDateString("en-US")
-    fetch("converted/" + "1.9C.json")
-      .then(response => response.json())
-      .then((data) => {
-        this.studentsData = data
-      })
     fetch("converted/" + "weight.json")
       .then(response => response.json())
       .then((data) => {
@@ -81,13 +83,43 @@ new Vue({
       return credit
     },
     termOnChange(event) {
-      console.log("term:", event.target.value)
+      if (event.target.value == '-') {
+        console.log("choose a term")
+        this.termSelected = false
+      } else {
+        this.termSelected = true
+        this.term = event.target.value
+        this.checkTermGradeLetter(this.termSelected, this.gradeSelected, this.gradeLetterSelected)
+      }
     },
     gradeOnChange(event) {
-      console.log("grade:", event.target.value)
+      if (event.target.value == '-') {
+        console.log("choose a grade")
+        this.gradeSelected = false
+      } else {
+        this.gradeSelected = true
+        this.grade = event.target.value
+        this.checkTermGradeLetter(this.termSelected, this.gradeSelected, this.gradeLetterSelected)
+      }
     },
     gradeLetterOnChange(event) {
-      console.log("class: ", event.target.value)
+      if (event.target.value == '-') {
+        console.log("choose a grade letter")
+        this.gradeLetterSelected = false
+      } else {
+        this.gradeLetterSelected = true
+        this.gradeClass = event.target.value
+        this.checkTermGradeLetter(this.termSelected, this.gradeSelected, this.gradeLetterSelected)
+      }
+    },
+    checkTermGradeLetter(termSelected, gradeSelected, gradeLetterSelected) {
+      if (termSelected && gradeSelected && gradeLetterSelected) {
+        fetch("converted/" + this.term + "." + this.grade + this.gradeClass + ".json")
+          .then(response => response.json())
+          .then((data) => {
+            this.studentsData = data
+          })
+      }
     }
   }
 })
