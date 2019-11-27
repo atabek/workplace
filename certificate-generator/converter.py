@@ -92,6 +92,9 @@ for file in source_files:
       firstName = firstName.replace(" ", "", 1)
       studentFullName = firstName + ' ' + lastName
       marks = splittedLine[2:len(splittedLine)]
+      numberOfMarks = len(marks)
+      if (marks[numberOfMarks - 4] == '-'):
+        marks.append("0")
       for i in range(len(marks)):
         if marks[i] == "" or marks[i] == '-':
           marks[i] = str(0)
