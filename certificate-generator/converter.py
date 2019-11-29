@@ -30,14 +30,14 @@ while True:
 
 path = os.getcwd()
 try:
-  convertedDir = os.path.join(path, "app", "public","converted")
+  convertedDir = os.path.join(path, "app", "public","converted", "term" + termSelected)
   if(os.path.isdir(convertedDir)):
     shutil.rmtree(convertedDir)
   os.mkdir(convertedDir)
 except OSError:
-  print ("Creation of the directory %s failed" % path)
+  print ("Creation of the directory %s failed" % convertedDir)
 else:
-  print ("Successfully created the directory %s " % path)
+  print ("Successfully created the directory %s " % convertedDir)
 
 subjectCredit = dict()
 with open("weights.txt", 'r') as csvfile:

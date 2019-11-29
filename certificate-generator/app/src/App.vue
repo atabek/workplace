@@ -246,6 +246,7 @@ export default {
       if (event.target.value == '-') {
         console.log("choose a term")
         this.termSelected = false
+        this.term = ""
       } else {
         this.termSelected = true
         this.term = event.target.value
@@ -256,6 +257,7 @@ export default {
       if (event.target.value == '-') {
         console.log("choose a grade")
         this.gradeSelected = false
+        this.grade = ""
       } else {
         this.gradeSelected = true
         this.grade = event.target.value
@@ -266,6 +268,7 @@ export default {
       if (event.target.value == '-') {
         console.log("choose a grade letter")
         this.gradeLetterSelected = false
+        this.grade = ""
       } else {
         this.gradeLetterSelected = true
         this.gradeClass = event.target.value
@@ -274,7 +277,7 @@ export default {
     },
     checkTermGradeLetter(termSelected, gradeSelected, gradeLetterSelected) {
       if (termSelected && gradeSelected && gradeLetterSelected) {
-        fetch("converted/" + this.term + "." + this.grade + this.gradeClass + ".json")
+        fetch("converted/" + "term" + this.term + '/' + this.term + "." + this.grade + this.gradeClass + ".json")
           .then(response => response.json())
           .then((data) => {
             this.studentsData = data
