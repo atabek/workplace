@@ -179,7 +179,7 @@ export default {
   created: function () {
     let now = new Date()
     this.today = now.toLocaleDateString("en-GB")
-    fetch("converted/" + "weight.json")
+    fetch("converted/" + "weights.json")
       .then(response => response.json())
       .then((data) => {
         this.subjects = data

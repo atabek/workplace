@@ -1,0 +1,37 @@
+ART,1,Art
+ARTD,1,Art and Design
+BIO,6,Biology
+BUS,6,Business Studies
+CHEM,6,Chemistry
+DAN,1,Dance
+ECON,6,Economics
+ENG,6,English
+FRE,3,French
+GEO,6,Geography
+GER,3,German Language
+HIS,6,History
+HISKR,3,History of Kyrgyzstan
+HW,1,Homework Hour
+ICT,6,Information and Communication Technology
+KYR,3,Kyrgyz Language
+KRLIT,3,Kyrgyz Literature
+LIT,1,Literature
+MATH,6,Mathematics
+MUS,1,Music
+PSHE,1,Personal social health and economic education
+PE,1,Physical Education
+PHY,6,Physics
+RUS,3,Russian
+RSLIT,3,Russian Literature
+SCI,6,Science
+WHIS,6,World History
+ETHIC,1,Values and Ethics
+SS,1,Self Study
+MATMEC,6,Math Mech
+MP1,6,Math Pure1
+STAT,6,Statistics
+MATSTAT,6,Statistics
+CALC,6,Calculus
+MICRO,6,Microeconomics
+CompSci,6,Computer Science
+Beh,1,Behaviour

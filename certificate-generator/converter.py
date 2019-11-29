@@ -2,6 +2,7 @@ import csv
 import json
 import glob
 import os
+import shutil
 
 def numberOfLines(file):
   f = open(file, "r")
@@ -29,17 +30,17 @@ while True:
 
 path = os.getcwd()
 try:
-  convertedDir = path + "/webapp/converted"
+  convertedDir = os.path.join(path, "app", "public","converted")
   if(os.path.isdir(convertedDir)):
-    os.rmdir(convertedDir)
-  os.mkdir(path + '/webapp/converted/')
+    shutil.rmtree(convertedDir)
+  os.mkdir(convertedDir)
 except OSError:
   print ("Creation of the directory %s failed" % path)
 else:
   print ("Successfully created the directory %s " % path)
 
 subjectCredit = dict()
-with open("weight.csv", 'r') as csvfile:
+with open("weights.txt", 'r') as csvfile:
   for line in csvfile:
     values = line.replace('\n', '', 1).split(',')
     subjectCredit[values[0]] = int(values[1])
@@ -62,7 +63,7 @@ subjectMarks = []
 for file in source_files:
   numlines = numberOfLines(file)
   read_file = open(file, "r")
-  write_file = open("webapp/converted/" + file, "w+")
+  write_file = open(os.path.join(convertedDir,file), "w+")
   for line in read_file:
     n = n + 1
     if (n == 2):
@@ -115,23 +116,24 @@ for file in source_files:
 
   write_file.close()
   read_file.close()
-  with open("webapp/converted/" + file) as convertedFile:
+  with open(os.path.join(convertedDir, file)) as convertedFile:
     reader = csv.DictReader(convertedFile)
     rows = list(reader)
   jsonFilename = file.replace("csv", "json")
-  with open("webapp/converted/" + jsonFilename, 'w') as convertedJsonFile:
+  with open(os.path.join(convertedDir, jsonFilename), 'w') as convertedJsonFile:
     json.dump(rows, convertedJsonFile)
   
-  with open("weightToConvert.csv", "w") as weightToConvertFile:
-    weightToConvertFile.write("Subjectname,Credit,SubjectnameLong\n")
-    with open("weight.csv", "r") as weightCsv:
+  weightsToConvertFile = os.path.join(convertedDir, "weightToConvert.csv")
+  with open(weightsToConvertFile, "w") as f:
+    f.write("Subjectname,Credit,SubjectnameLong\n")
+    with open("weights.txt", "r") as weightCsv:
       for line in weightCsv:
-        weightToConvertFile.write(line)
+        f.write(line)
   
-  with open("weightToConvert.csv") as weightToConvertFile:
-    reader = csv.DictReader(weightToConvertFile)
+  with open(weightsToConvertFile) as f:
+    reader = csv.DictReader(f)
     rows = list(reader)
-  with open("webapp/converted/weight.json", 'w') as convertedJsonFile:
+  with open(os.path.join(convertedDir, "weights.json"), 'w') as convertedJsonFile:
     json.dump(rows, convertedJsonFile)
 
 
