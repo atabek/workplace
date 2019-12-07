@@ -173,7 +173,8 @@ export default {
       gradeLetterSelected: false,
       term: "",
       grade: "",
-      gradeClass: ""
+      gradeClass: "",
+      error: ""
     }
   },
   created: function () {
