@@ -7,7 +7,7 @@
     >
       <div class="d-flex align-center">
         <v-img
-          alt="Vuetify Logo"
+          alt="Company Logo"
           class="shrink mr-2"
           contain
           src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
@@ -16,7 +16,7 @@
         />
 
         <v-img
-          alt="Vuetify Name"
+          alt="Company Name"
           class="shrink mt-1 hidden-sm-and-down"
           contain
           min-width="100"
@@ -35,6 +35,27 @@
         <span class="mr-2">Latest Release</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Who we are?</span>
+      </v-btn>
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Our services</span>
+      </v-btn>
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Our partners</span>
+      </v-btn>
     </v-app-bar>
 
     <v-content>
@@ -44,13 +65,13 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld'
+import HelloWorld from './components/HelloWorld'
 
 export default {
   name: 'App',
 
   components: {
-    // HelloWorld
+    HelloWorld
   },
 
   data: () => ({
