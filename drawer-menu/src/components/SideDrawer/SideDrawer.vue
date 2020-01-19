@@ -16,6 +16,7 @@ export default {
 };
 </script>
 <style lang="scss">
+@import "../../scss/_variables.scss";
 @media (min-width: 769px) {
   .side-drawer {
     display: none;
@@ -23,7 +24,7 @@ export default {
 }
 .side-drawer {
   height: 100%;
-  background-color: white;
+  background-color: $fourth;
   box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -50,12 +51,11 @@ export default {
   }
   & a {
     text-decoration: none;
-    color: #521751;
     font-size: 1.5rem;
   }
   & a:hover,
   & a:active {
-    color: #fa923f;
+    color: $primary;
   }
 }
 </style>

@@ -33,18 +33,19 @@ export default {
 };
 </script>
 <style lang="scss">
+@import "../scss/_variables.scss";
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #521751;
+  background-color: $fourth;
   height: 5.5rem;
   &__logo {
     margin-left: 1rem;
   }
   &__logo a {
-    color: white;
+    color: black;
     text-decoration: none;
     font-size: 2rem;
   }
@@ -62,15 +63,20 @@ export default {
   }
   &__navigation-items li {
     padding: 1rem;
+    transition: 0.2s ease-in;
+    &:hover {
+      background-color: $secondary;
+      border-radius: 0.5rem;
+    }
   }
   &__navigation-items a {
-    color: white;
+    color: black;
     text-decoration: none;
     font-size: 1.5rem;
   }
   &__navigation-items a:hover,
   &__navigation-items a:active {
-    color: #fa923f;
+    // color: #fa923f;
   }
 }
 @media (max-width: 768px) {

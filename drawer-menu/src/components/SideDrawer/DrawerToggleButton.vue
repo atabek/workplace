@@ -30,7 +30,7 @@ export default {
   &__line {
     height: 0.2rem;
     width: 2rem;
-    background-color: white;
+    background-color: black;
   }
 }
 </style>

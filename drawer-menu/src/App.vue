@@ -38,6 +38,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./scss/_variables.scss";
 * {
   margin: 0;
   padding: 0;
@@ -52,6 +53,7 @@ body {
 }
 #app {
   height: 100%;
+  background-color: $backgroundColor;
 }
 .container {
   max-width: 1140px;
