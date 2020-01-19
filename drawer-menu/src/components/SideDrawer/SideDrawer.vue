@@ -16,6 +16,11 @@ export default {
 };
 </script>
 <style lang="scss">
+@media (min-width: 769px) {
+  .side-drawer {
+    display: none;
+  }
+}
 .side-drawer {
   height: 100%;
   background-color: white;

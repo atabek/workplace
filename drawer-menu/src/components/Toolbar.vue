@@ -2,7 +2,7 @@
   <header class="header">
     <div class="container">
       <nav class="header__navigation">
-        <div>
+        <div class="header__toggle-button">
           <DrawerToggleButton @clicked="drawerToggleClickHandler" />
         </div>
         <div class="header__logo"><a href="/">The LOGO</a></div>
@@ -71,6 +71,19 @@ export default {
   &__navigation-items a:hover,
   &__navigation-items a:active {
     color: #fa923f;
+  }
+}
+@media (max-width: 768px) {
+  .header__navigation-items {
+    display: none;
+  }
+}
+@media (min-width: 769px) {
+  .header__toggle-button {
+    display: none;
+  }
+  .header__logo {
+    margin-left: 0;
   }
 }
 </style>
