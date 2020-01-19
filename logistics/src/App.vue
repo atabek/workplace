@@ -1,32 +1,67 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <Toolbar @clicked="drawerToggleClickHandler" />
+    <SideDrawer :display="sideDrawerOpen" />
+    <Backdrop v-if="sideDrawerOpen" @clicked="backdropClickHandler" />
+    <div class="view">
+      <router-view />
     </div>
-    <router-view />
   </div>
 </template>
+<script>
+import Toolbar from "./components/Toolbar.vue";
+import SideDrawer from "./components/SideDrawer/SideDrawer.vue";
+import Backdrop from "./components/Backdrop.vue";
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+  name: "app",
+  components: {
+    Toolbar,
+    SideDrawer,
+    Backdrop
+  },
+  data: function() {
+    return {
+      sideDrawerOpen: false
+    };
+  },
+  methods: {
+    drawerToggleClickHandler() {
+      this.sideDrawerOpen = !this.sideDrawerOpen;
+    },
+    backdropClickHandler() {
+      this.sideDrawerOpen = false;
     }
   }
+};
+</script>
+
+<style lang="scss">
+@import "./scss/_variables.scss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+  height: 100%;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+}
+#app {
+  height: 100%;
+  background-color: $backgroundColor;
+}
+.view {
+  padding-top: 5.5rem;
+}
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
 }
 </style>
