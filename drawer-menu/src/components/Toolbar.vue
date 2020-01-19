@@ -9,10 +9,10 @@
         <div class="spacer"></div>
         <div class="header__navigation-items">
           <ul>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Our Services</a></li>
-            <li><a href="#">Our Partners</a></li>
-            <li><a href="#">Contacts</a></li>
+            <li><a href="#">Кто мы</a></li>
+            <li><a href="#">Наши услуги</a></li>
+            <li><a href="#">Наши клиенты/партнеры</a></li>
+            <li><a href="#">Наши Контакты</a></li>
           </ul>
         </div>
       </nav>
@@ -41,6 +41,7 @@ export default {
   width: 100%;
   background-color: $fourth;
   height: 5.5rem;
+  z-index: 100;
   &__logo {
     margin-left: 1rem;
   }

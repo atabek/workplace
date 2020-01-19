@@ -49,6 +49,7 @@ html {
   height: 100%;
 }
 body {
+  font-family: "Lato", sans-serif;
   height: 100%;
 }
 #app {
