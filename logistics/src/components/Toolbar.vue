@@ -87,18 +87,25 @@ export default {
     display: flex;
   }
   &__navigation-items li {
-    padding: 1rem;
     transition: 0.2s ease-in;
+    line-height: 3.5rem;
     &:hover {
-      background-color: $secondary;
+      background-color: darken($color: white, $amount: 0.1);
       border-radius: 0.5rem;
     }
   }
   &__navigation-items .link {
+    padding: 1rem;
     color: black;
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 300;
+    &:hover,
+    &:active,
+    &.router-link-exact-active {
+      color: darkcyan;
+      border-bottom: 1px solid darkgoldenrod;
+    }
   }
 }
 @media (max-width: 768px) {
