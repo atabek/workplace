@@ -1,7 +1,9 @@
 <template>
   <div class="services">
     <div class="container">
-      <h2>Наши услуги</h2>
+      <div class="row centered-text">
+        <h2 class="heading-secondary">Наши услуги</h2>
+      </div>
       <p>
         Доставка грузов различным видом транспорта
       </p>

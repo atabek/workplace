@@ -48,19 +48,4 @@ export default {
     max-width: 85%;
   }
 }
-.heading-tertiary {
-  line-height: 3rem;
-  padding: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  &--primary {
-    background-color: $primary;
-  }
-  &--secondary {
-    background-color: $secondary;
-  }
-  &--tertiary {
-    background-color: $tertiary;
-  }
-}
 </style>

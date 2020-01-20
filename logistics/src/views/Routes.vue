@@ -1,7 +1,9 @@
 <template>
   <div class="routes">
     <div class="container">
-      <h2>This is routes page</h2>
+      <div class="row centered-text">
+        <h2 class="heading-secondary">Карта маршрутов</h2>
+      </div>
       <ul>
         <ul>
           <h3>СНГ</h3>

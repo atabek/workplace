@@ -95,7 +95,6 @@ export default {
     line-height: 3.5rem;
     &:hover {
       background-color: darken($color: white, $amount: 0.1);
-      // border-radius: 0.5rem;
     }
   }
   &__navigation-items .link {
@@ -115,7 +114,7 @@ export default {
 }
 @media (max-width: 860px) {
   .header__navigation-items .link {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 }
 @media (max-width: 768px) {

@@ -24,7 +24,7 @@
           website="http://www.gwg-logx.co.jp"
         />
         <ContactColumn
-          title="Офис в Шанхай"
+          title="Офис в Шанхае"
           name="Green World Group Logistics"
           address="〒20011 1011# ул. Луджиабин, район Хуанпу, город Шанхай, Китай"
           telephone="+8613818705269"

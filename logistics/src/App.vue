@@ -56,7 +56,6 @@ body {
 }
 .view {
   margin-top: 5.5rem;
-  margin-bottom: -5.5rem;
 }
 .container {
   max-width: 1140px;

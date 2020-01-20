@@ -127,6 +127,26 @@ export default {
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
   }
 }
+.heading-tertiary {
+  line-height: 3rem;
+  padding: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  &--primary {
+    background-color: $primary;
+  }
+  &--secondary {
+    background-color: $secondary;
+  }
+  &--tertiary {
+    background-color: $tertiary;
+  }
+}
+@media (max-width: 768px) {
+  .heading-secondary {
+    font-size: 3rem;
+  }
+}
 .centered-text {
   text-align: center;
 }

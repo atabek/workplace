@@ -1,7 +1,9 @@
 <template>
   <div class="about">
     <div class="container">
-      <h2>Кто мы</h2>
+      <div class="row centered-text">
+        <h2 class="heading-secondary">Кто мы</h2>
+      </div>
       <p>
         Логистику можно сравнить с кровью, доставляющей питательные вещества и
         таким образом поддерживающей человеческое тело. Наша компания является
