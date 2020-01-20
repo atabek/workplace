@@ -1,7 +1,7 @@
 <template>
   <div class="routes">
     <div class="container">
-      <h1>This is routes page</h1>
+      <h2>This is routes page</h2>
       <ul>
         <ul>
           <h3>СНГ</h3>

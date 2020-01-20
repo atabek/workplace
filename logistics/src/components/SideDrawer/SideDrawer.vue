@@ -27,7 +27,7 @@ export default {
   props: ["display"]
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../../scss/_variables.scss";
 @media (min-width: 769px) {
   .side-drawer {
@@ -55,25 +55,22 @@ export default {
     flex-direction: column;
     height: 100%;
     justify-content: center;
-    & li {
-      // height: 3rem;
-      text-align: right;
-      // line-height: 3rem;
-      // background-color: white;
-      // padding: 3rem;
-      & .link {
-        text-decoration: none;
-        color: black;
-        font-size: 2rem;
-        padding: 2rem;
-        @media (max-width: 768px) {
-          font-size: 1.5rem;
-        }
-      }
-      & .link:hover,
-      & .link:active {
-        color: red;
-      }
+  }
+  & li {
+    text-align: center;
+    // background-color: white;
+    & .link {
+      text-decoration: none;
+      color: black;
+      font-size: 2rem;
+      line-height: 4rem;
+      padding: 1rem;
+    }
+    & .link:hover,
+    & .link:active,
+    & .link.router-link-exact-active {
+      color: darkcyan;
+      border-bottom: 1px solid darkgoldenrod;
     }
   }
 }
