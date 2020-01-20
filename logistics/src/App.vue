@@ -49,14 +49,14 @@ html {
 }
 body {
   font-family: "Roboto", sans-serif;
-  height: 100%;
+  background-color: $backgroundColor;
 }
 #app {
   height: 100%;
-  background-color: $backgroundColor;
 }
 .view {
-  padding-top: 5.5rem;
+  margin-top: 5.5rem;
+  margin-bottom: -5.5rem;
 }
 .container {
   max-width: 1140px;

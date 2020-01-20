@@ -87,11 +87,15 @@ export default {
     display: flex;
   }
   &__navigation-items li {
+    margin-left: 0.5rem;
+    &::last-child {
+      margin-left: 0;
+    }
     transition: 0.2s ease-in;
     line-height: 3.5rem;
     &:hover {
       background-color: darken($color: white, $amount: 0.1);
-      border-radius: 0.5rem;
+      // border-radius: 0.5rem;
     }
   }
   &__navigation-items .link {
@@ -104,8 +108,14 @@ export default {
     &:active,
     &.router-link-exact-active {
       color: darkcyan;
-      border-bottom: 1px solid darkgoldenrod;
+      border-bottom: 2px solid darkgoldenrod;
+      background-color: darken($color: white, $amount: 0.1);
     }
+  }
+}
+@media (max-width: 860px) {
+  .header__navigation-items .link {
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 768px) {

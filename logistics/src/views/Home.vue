@@ -50,6 +50,13 @@ export default {
 </script>
 <style lang="scss">
 @import "../scss/_variables.scss";
+.row {
+  &::before,
+  &::after {
+    content: "";
+    clear: both;
+  }
+}
 .featured-content {
   height: 95vh;
   background-image: linear-gradient(
@@ -104,11 +111,13 @@ export default {
 }
 
 .heading-secondary {
+  margin: 2rem 0;
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(to right, black, $primary);
+  background-image: linear-gradient(to right, $fourth, $primary);
+  background-clip: text;
   color: transparent;
   letter-spacing: 0.2rem;
   transition: all 0.2s;
@@ -118,12 +127,9 @@ export default {
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
   }
 }
-
-.heading-tertiary {
-  font-weight: 700;
-  text-transform: uppercase;
+.centered-text {
+  text-align: center;
 }
-
 .btn {
   &,
   &:link,
