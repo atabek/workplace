@@ -1,13 +1,14 @@
 <template>
   <div class="contact-column">
-    <h3 class="heading-tertiary heading-tertiary--tertiary">{{ title }}</h3>
+    <h3 class="heading-tertiary">{{ title }}</h3>
     <ul>
       <li v-if="name">{{ name }}</li>
-      <li v-if="address">Адрес: {{ address }}</li>
-      <li v-if="telephone">Тел: {{ telephone }}</li>
-      <li v-if="email">Email: {{ email }}</li>
-      <li v-if="bankInfo">Банк реквизиты: {{ bankInfo }}</li>
+      <li v-if="address">&#127970; {{ address }}</li>
+      <li v-if="telephone">&#9743; {{ telephone }}</li>
+      <li v-if="email">&#128231; {{ email }}</li>
+      <li v-if="bankInfo">&#127974; {{ bankInfo }}</li>
       <li v-if="website">
+        &#127760;
         <a :href="website" target="_blank">{{ website }}</a>
       </li>
     </ul>
@@ -15,6 +16,11 @@
 </template>
 <script>
 export default {
+  // data: function() {
+  //   return {
+  //     background: this.backgroundColor
+  //   };
+  // },
   props: [
     "title",
     "name",
@@ -23,6 +29,7 @@ export default {
     "email",
     "bankInfo",
     "website"
+    // "backgroundColor"
   ]
 };
 </script>
@@ -38,7 +45,7 @@ export default {
     margin-right: 0;
   }
   & ul {
-    padding: 1rem;
+    padding: 0 1rem;
     list-style: none;
   }
   & li {

@@ -17,7 +17,9 @@
     </div>
     <div class="featured-about">
       <div class="container">
-        <h2>Кто мы</h2>
+        <div class="row centered-text">
+          <h2 class="heading-secondary">Кто мы</h2>
+        </div>
         <p>
           <strong>GWG Logistics</strong> - японская международная
           транспортно-экспедиторская компания, город Токио, основанная
@@ -129,7 +131,7 @@ export default {
 }
 .heading-tertiary {
   line-height: 3rem;
-  padding: 1rem;
+  padding: 0 1rem;
   font-weight: 700;
   text-transform: uppercase;
   &--primary {

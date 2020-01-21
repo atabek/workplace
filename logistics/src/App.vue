@@ -6,23 +6,58 @@
     <div class="view">
       <router-view />
     </div>
+    <Footer :contacts="contacts" />
   </div>
 </template>
 <script>
 import Toolbar from "./components/Toolbar.vue";
 import SideDrawer from "./components/SideDrawer/SideDrawer.vue";
 import Backdrop from "./components/Backdrop.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "app",
   components: {
     Toolbar,
     SideDrawer,
-    Backdrop
+    Backdrop,
+    Footer
   },
   data: function() {
     return {
-      sideDrawerOpen: false
+      sideDrawerOpen: false,
+      contacts: [
+        {
+          title: "Офис в Бишкеке",
+          name:
+            "Green World Group Logistics KG (Грин Ворлд Групп Лоджистикс КейДжи)",
+          address: "(в поиске)",
+          telephone: "(в поиске)",
+          email: "info@gwgkg.com",
+          bankInfo: "(жду информацию)",
+          website: "https://gwgkg.com"
+        },
+        {
+          title: "Офис в Японии",
+          name: "Green World Group Logistics",
+          address:
+            "〒105-0003 5F Сасай Билдинг, Ниши Шимбаши, район Минато, город Токио, Япония",
+          telephone: "+81(0)5472-0025",
+          email: "",
+          bankInfo: "",
+          website: "http://www.gwg-logx.co.jp"
+        },
+        {
+          title: "Офис в Шанхае",
+          name: "Green World Group Logistics",
+          address:
+            "〒20011 1011# ул. Луджиабин, район Хуанпу, город Шанхай, Китай",
+          telephone: "+8613818705269",
+          email: "",
+          bankInfo: "",
+          website: ""
+        }
+      ]
     };
   },
   methods: {
