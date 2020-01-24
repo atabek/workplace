@@ -90,7 +90,7 @@ export default {
     font-weight: 400;
     letter-spacing: 3rem;
     @media (max-width: 768px) {
-      font-size: 2.5rem;
+      font-size: 2.75rem;
       letter-spacing: 1rem;
     }
 
@@ -169,7 +169,7 @@ export default {
     border: none;
     cursor: pointer;
     @media (max-width: 768px) {
-      font-size: 1rem;
+      font-size: 1.5rem;
       padding: 1rem 2rem;
     }
   }

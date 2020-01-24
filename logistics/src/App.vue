@@ -29,13 +29,12 @@ export default {
       contacts: [
         {
           title: "Офис в Бишкеке",
-          name:
-            "Green World Group Logistics KG (Грин Ворлд Групп Лоджистикс КейДжи)",
-          address: "(в поиске)",
-          telephone: "(в поиске)",
-          email: "info@gwgkg.com",
-          bankInfo: "(жду информацию)",
-          website: "https://gwgkg.com"
+          name: "Green World Group Logistics KG",
+          address: "г. Бишкек, ул. Киевская 153, пер. пр. Манаса, 720001",
+          telephone: "+996(709) 007557",
+          email: "info@gwgkg.com"
+          // bankInfo: "(жду информацию)",
+          // website: "https://gwgkg.com"
         },
         {
           title: "Офис в Японии",
@@ -43,9 +42,9 @@ export default {
           address:
             "〒105-0003 5F Сасай Билдинг, Ниши Шимбаши, район Минато, город Токио, Япония",
           telephone: "+81(0)5472-0025",
-          email: "",
-          bankInfo: "",
-          website: "http://www.gwg-logx.co.jp"
+          email: ""
+          // bankInfo: "",
+          // website: "http://www.gwg-logx.co.jp"
         },
         {
           title: "Офис в Шанхае",
@@ -53,9 +52,9 @@ export default {
           address:
             "〒20011 1011# ул. Луджиабин, район Хуанпу, город Шанхай, Китай",
           telephone: "+8613818705269",
-          email: "",
-          bankInfo: "",
-          website: ""
+          email: ""
+          // bankInfo: "",
+          // website: ""
         }
       ]
     };

@@ -7,9 +7,7 @@
         <router-link to="/services" class="link">Наши услуги</router-link>
       </li>
       <li>
-        <router-link to="/routes" class="link"
-          >Наши клиенты/партнеры</router-link
-        >
+        <router-link to="/routes" class="link">Наши клиенты</router-link>
       </li>
       <li>
         <router-link to="/partners" class="link">
