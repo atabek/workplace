@@ -8,9 +8,9 @@
         <ContactColumn
           title="Офис в Бишкеке"
           name="Green World Group Logistics KG"
-          address="(в поиске)"
-          telephone="(в поиске)"
-          email="info@gwgkg.com"
+          address="г. Бишкек, ул. Киевская 153, пер. пр. Манаса, 720001"
+          telephone="+996(709) 007557"
+          email=""
         />
         <ContactColumn
           title="Офис в Токио"
