@@ -5,49 +5,28 @@
         <div class="heading__text-box">
           <h1 class="heading-primary">
             <span class="heading-primary--main">GWG Logistics</span>
-            <span class="heading-primary--sub"
-              >профессионалы в транспортно-экспедиторской отрасли</span
-            >
+            <span class="heading-primary--sub">
+              профессионалы в транспортно-экспедиторской отрасли
+            </span>
           </h1>
           <router-link to="/about" class="btn btn--white btn--animated">
-            Далее&hellip;
+            Подробнее&hellip;
           </router-link>
         </div>
       </div>
     </div>
-    <div class="featured-about">
-      <div class="container">
-        <div class="row centered-text">
-          <h2 class="heading-secondary">Кто мы</h2>
-        </div>
-        <p>
-          <strong>GWG Logistics</strong> - японская международная
-          транспортно-экспедиторская компания, город Токио, основанная
-          профессионалами данной отрасли.
-        </p>
-        <p>
-          <strong>GWG Logistics</strong> является членом ассоциации
-          <u>JIFFA (Japan International Freight Forwarder Association)</u> с
-          2012 года.
-        </p>
-        <p>
-          <strong>Цель нашей компании</strong> – завоевать доверие наших
-          клиентов.
-        </p>
-        <p>
-          <strong>Задача нашей компании</strong> заключается в эффективной
-          организации доставки грузов в указанное место и срок.
-        </p>
-      </div>
-    </div>
+    <About />
   </main>
 </template>
 
 <script>
 // @ is an alias to /src
+import About from "./About.vue";
 export default {
   name: "home",
-  components: {}
+  components: {
+    About
+  }
 };
 </script>
 <style lang="scss">

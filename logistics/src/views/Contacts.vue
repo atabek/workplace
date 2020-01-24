@@ -41,9 +41,9 @@ export default {
 <style lang="scss">
 .contact-list {
   display: flex;
+  justify-content: space-between;
   @media (max-width: 768px) {
     flex-flow: column;
-    align-items: left;
   }
 }
 </style>

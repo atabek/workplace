@@ -72,3 +72,8 @@
     </div>
   </div>
 </template>
+<style lang="scss">
+.routes {
+  font-size: 1.5rem;
+}
+</style>

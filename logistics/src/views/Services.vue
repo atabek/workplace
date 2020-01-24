@@ -82,8 +82,8 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: "services"
-};
-</script>
+<style lang="scss">
+.services {
+  font-size: 1.5rem;
+}
+</style>
