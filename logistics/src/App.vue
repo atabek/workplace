@@ -37,7 +37,7 @@ export default {
           // website: "https://gwgkg.com"
         },
         {
-          title: "Офис в Японии",
+          title: "Офис в Токио",
           name: "Green World Group Logistics",
           address:
             "〒105-0003 5F Сасай Билдинг, Ниши Шимбаши, район Минато, город Токио, Япония",
@@ -89,7 +89,7 @@ body {
   height: 100%;
 }
 .view {
-  margin-top: 5.5rem;
+  margin-top: 7rem;
 }
 .container {
   max-width: 1140px;

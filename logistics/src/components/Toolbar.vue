@@ -60,7 +60,7 @@ export default {
   left: 0;
   width: 100%;
   background-color: $fourth;
-  height: 5.5rem;
+  height: 7rem;
   z-index: 100;
   &__logo {
     margin-left: 1rem;
