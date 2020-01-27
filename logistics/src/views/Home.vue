@@ -16,16 +16,19 @@
       </div>
     </div>
     <About />
+    <Services />
   </main>
 </template>
 
 <script>
 // @ is an alias to /src
 import About from "./About.vue";
+import Services from "./Services.vue";
 export default {
   name: "home",
   components: {
-    About
+    About,
+    Services
   }
 };
 </script>
