@@ -6,6 +6,7 @@ import Services from "../views/Services.vue";
 import Partners from "../views/Partners.vue";
 import Contacts from "../views/Contacts.vue";
 import Routes from "../views/Routes.vue";
+import ContactsForm from "../views/ContactsForm.vue";
 
 Vue.use(VueRouter);
 
@@ -44,6 +45,11 @@ const routes = [
     path: "/routes",
     name: "routes",
     component: Routes
+  },
+  {
+    path: "/form",
+    name: "form",
+    component: ContactsForm
   }
 ];
 
