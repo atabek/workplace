@@ -147,7 +147,7 @@
     }
   }
 }
-ul {
+.services ul {
   margin-left: 2rem;
   margin-bottom: 2rem;
 }
