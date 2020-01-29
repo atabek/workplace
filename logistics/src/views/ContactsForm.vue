@@ -1,88 +1,28 @@
 <template>
-  <div>
-    <!-- <form @submit.prevent="onSubmit" class="form">
-      <div class="form__row">
-        <div class="form__label">
-          <label for="fullname">Ф.И.О.</label>
-        </div>
-        <div class="form__input">
-          <input
-            type="text"
-            id="fullname"
-            name="fullname"
-            placeholder="Фамилия, имя, отчество"
-            required
-          />
-        </div>
-      </div>
-      <div class="form__row">
-        <div class="form__label">
-          <label for="email">Email</label>
-        </div>
-        <div class="form__input">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="example@example.com"
-          />
-        </div>
-      </div>
-      <div class="form__row">
-        <div class="form__label">
-          <label for="phone">Тел.</label>
-        </div>
-        <div class="form__input">
-          <input
-            type="tel"
-            id="tel"
-            name="tel"
-            placeholder="Ваш телефон"
-            required
-          />
-        </div>
-      </div>
-      <div class="form__row">
-        <div class="form__label">
-          <label for="description">Ваш вопрос</label>
-        </div>
-        <div class="form__input">
-          <textarea
-            name="description"
-            id="description"
-            cols="30"
-            rows="10"
-          ></textarea>
-        </div>
-      </div>
-      <div class="form__row">
-        <input type="submit" value="Отправить" class="btn" />
-      </div>
-    </form> -->
+  <div >
     <form
-      class="gform pure-form pure-form-stacked"
+      class="gform"
       @submit.prevent="onSubmit"
-      action="https://script.google.com/macros/s/AKfycby_LnbewIuOYENvxF62FVIrBSmo_maH0Ov8WlxpKA/exec"
+      action="https://script.google.com/macros/s/AKfycbz0YuOmgKE6uVOWiOafPRbA52MuROxr34z0Qv6yIzj0OCzj9kWd/exec"
     >
       <!-- change the form action to your script url -->
 
       <div class="form-elements">
-        <fieldset class="pure-group">
+        <fieldset class="">
           <label for="name">Name: </label>
           <input id="name" name="name" placeholder="What your Mom calls you" />
         </fieldset>
 
-        <fieldset class="pure-group">
+        <fieldset class="">
           <label for="message">Message: </label>
           <textarea
             id="message"
             name="message"
             rows="10"
-            placeholder="Tell us what's on your mind..."
+            placeholder="..."
           ></textarea>
         </fieldset>
-
-        <fieldset class="pure-group">
+        <fieldset class="">
           <label for="email"><em>Your</em> Email Address:</label>
           <input
             id="email"
@@ -93,13 +33,18 @@
             placeholder="your.name@email.com"
           />
         </fieldset>
-
-        <fieldset class="pure-group">
-          <label for="color">Favourite Color: </label>
-          <input id="color" name="color" placeholder="green" />
+        <fieldset class="">
+          <label for="tel"><em>Your</em> Telephone Address:</label>
+          <input
+            id="tel"
+            name="tel"
+            type="tel"
+            value=""
+            required
+            placeholder="0777112233"
+          />
         </fieldset>
-
-        <fieldset class="pure-group honeypot-field">
+        <fieldset class=" honeypot-field">
           <label for="honeypot"
             >To help avoid spam, utilize a Honeypot technique with a hidden text
             field; must be empty to submit the form! Otherwise, we assume the
@@ -207,35 +152,6 @@ export default {
 };
 </script>
 <style lang="scss">
-.form {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 1.5rem;
-  padding: 3rem 0;
-}
-.form__row {
-  min-width: 40rem;
-  margin: 1rem 0;
-}
-input[type="text"],
-input[type="email"],
-input[type="tel"] {
-  width: 100%;
-  height: 3rem;
-  padding: 5px;
-}
-textarea {
-  width: 100%;
-  height: 150px;
-  padding: 1rem 2rem;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  resize: none;
-}
 .honeypot-field {
   display: none;
 }
