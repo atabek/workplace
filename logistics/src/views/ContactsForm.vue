@@ -1,73 +1,80 @@
 <template>
-  <div >
-    <form
-      class="gform"
-      @submit.prevent="onSubmit"
-      action="https://script.google.com/macros/s/AKfycbz0YuOmgKE6uVOWiOafPRbA52MuROxr34z0Qv6yIzj0OCzj9kWd/exec"
-    >
-      <!-- change the form action to your script url -->
+  <div class="container">
+    <div class="row centered-text">
+      <h2 class="heading-secondary">Форма заявки</h2>
+    </div>
+    <div v-if="showForm" class="form-container">
+      <form
+        class="gform"
+        @submit.prevent="onSubmit"
+        action="https://script.google.com/macros/s/AKfycbz0YuOmgKE6uVOWiOafPRbA52MuROxr34z0Qv6yIzj0OCzj9kWd/exec"
+      >
+        <!-- change the form action to your script url -->
+        <div class="form-elements">
+          <div class="form-element-item">
+            <label for="name">Ф.И.О. </label>
+            <input id="name" name="name" placeholder="" type="text" />
+          </div>
 
-      <div class="form-elements">
-        <fieldset class="">
-          <label for="name">Name: </label>
-          <input id="name" name="name" placeholder="What your Mom calls you" />
-        </fieldset>
+          <div class="form-element-item">
+            <label for="message">Ваш вопрос: </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="10"
+              placeholder="..."
+            ></textarea>
+          </div>
+          <div class="form-element-item">
+            <label for="email">Электрнонная почта:</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value=""
+              required
+              placeholder="your.name@email.com"
+            />
+          </div>
+          <div class="form-element-item">
+            <label for="tel">Ваш телефон:</label>
+            <input
+              id="tel"
+              name="tel"
+              type="tel"
+              value=""
+              required
+              placeholder="0777112233"
+            />
+          </div>
+          <div class="honeypot-field">
+            <label for="honeypot"
+              >To help avoid spam, utilize a Honeypot technique with a hidden
+              text field; must be empty to submit the form! Otherwise, we assume
+              the user is a spam bot.</label
+            >
+            <input id="honeypot" type="text" name="honeypot" value="" />
+          </div>
 
-        <fieldset class="">
-          <label for="message">Message: </label>
-          <textarea
-            id="message"
-            name="message"
-            rows="10"
-            placeholder="..."
-          ></textarea>
-        </fieldset>
-        <fieldset class="">
-          <label for="email"><em>Your</em> Email Address:</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            value=""
-            required
-            placeholder="your.name@email.com"
-          />
-        </fieldset>
-        <fieldset class="">
-          <label for="tel"><em>Your</em> Telephone Address:</label>
-          <input
-            id="tel"
-            name="tel"
-            type="tel"
-            value=""
-            required
-            placeholder="0777112233"
-          />
-        </fieldset>
-        <fieldset class=" honeypot-field">
-          <label for="honeypot"
-            >To help avoid spam, utilize a Honeypot technique with a hidden text
-            field; must be empty to submit the form! Otherwise, we assume the
-            user is a spam bot.</label
-          >
-          <input id="honeypot" type="text" name="honeypot" value="" />
-        </fieldset>
-
-        <button class="button-success pure-button button-xlarge">
-          <i class="fa fa-paper-plane"></i>&nbsp;Send
-        </button>
-        <!-- Customise the Thankyou Message People See when they submit the form: -->
-        <div class="thankyou_message" style="display:none;">
-          <h2>
-            <em>Thanks</em> for contacting us! We will get back to you soon!
-          </h2>
+          <button class="btn with-border">
+            <span>&#10173;&nbsp;Send</span>
+          </button>
+          <!-- Customise the Thankyou Message People See when they submit the form: -->
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
+    <div v-else class="message">
+      <h2><em>Thanks</em> for contacting us! We will get back to you soon!</h2>
+    </div>
   </div>
 </template>
 <script>
 export default {
+  data() {
+    return {
+      showForm: true
+    };
+  },
   methods: {
     onSubmit() {
       var form = event.target;
@@ -85,14 +92,6 @@ export default {
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           form.reset();
-          var formElements = form.querySelector(".form-elements");
-          if (formElements) {
-            formElements.style.display = "none"; // hide form
-          }
-          var thankYouMessage = form.querySelector(".thankyou_message");
-          if (thankYouMessage) {
-            thankYouMessage.style.display = "block";
-          }
         }
       };
       // url encode form data for sending as post data
@@ -102,6 +101,7 @@ export default {
         })
         .join("&");
       xhr.send(encoded);
+      this.showForm = false;
     },
     getFormData(form) {
       var elements = form.elements;
@@ -152,7 +152,43 @@ export default {
 };
 </script>
 <style lang="scss">
+.form-container {
+  font-size: 1.5rem;
+}
+.form-elements {
+  padding: 1.5rem 0;
+}
+.form-element-item {
+  margin: 1.5rem 0;
+}
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"],
+form textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="tel"]:focus,
+form textarea {
+  background-color: #ddd;
+  outline: none;
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
 .honeypot-field {
   display: none;
+}
+.with-border {
+  border: 1px solid steelblue;
 }
 </style>
