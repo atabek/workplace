@@ -93,17 +93,17 @@ export default {
   }
   &__navigation-items li {
     margin-left: 0.5rem;
+    transition: 0.2s ease-in;
+    text-align: center;
     &::last-child {
       margin-left: 0;
     }
-    transition: 0.2s ease-in;
-    line-height: 3.5rem;
-    &:hover {
-      background-color: darken($color: white, $amount: 0.1);
-    }
   }
   &__navigation-items .link {
+    display: block;
     padding: 1rem;
+    width: 100%;
+    height: 100%;
     color: black;
     text-decoration: none;
     font-size: 1.5rem;
@@ -112,14 +112,15 @@ export default {
     &:active,
     &.router-link-exact-active {
       color: darkcyan;
-      border-bottom: 2px solid darkgoldenrod;
+      border-bottom: 1px solid darkgoldenrod;
       background-color: darken($color: white, $amount: 0.1);
+      border-radius: 1rem;
     }
   }
 }
 @media (max-width: 860px) {
   .header__navigation-items .link {
-    font-size: 1.25rem;
+    padding: 0.5rem;
   }
 }
 @media (max-width: 768px) {
