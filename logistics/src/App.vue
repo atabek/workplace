@@ -97,4 +97,7 @@ body {
   padding: 0 2rem;
   height: 100%;
 }
+.min-height-50vh {
+  min-height: 50vh;
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container min-height-50vh">
     <div class="row centered-text">
       <h2 class="heading-secondary">Форма заявки</h2>
     </div>
@@ -165,7 +165,6 @@ export default {
 </script>
 <style lang="scss">
 .form-container {
-  min-height: 90vh;
   font-size: 1.5rem;
 }
 .form-elements {

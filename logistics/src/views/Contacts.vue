@@ -1,5 +1,5 @@
 <template>
-  <div class="contacts">
+  <div class="contacts min-height-50vh">
     <div class="container">
       <div class="row centered-text">
         <h2 class="heading-secondary">Наши контакты</h2>
