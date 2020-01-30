@@ -100,4 +100,7 @@ body {
 .min-height-50vh {
   min-height: 50vh;
 }
+.min-height-100vh {
+  min-height: 100vh;
+}
 </style>

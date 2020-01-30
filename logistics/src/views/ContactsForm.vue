@@ -1,5 +1,5 @@
 <template>
-  <div class="container min-height-50vh">
+  <div class="container min-height-100vh">
     <div class="row centered-text">
       <h2 class="heading-secondary">Форма заявки</h2>
     </div>
