@@ -1,21 +1,38 @@
 <template>
   <nav class="side-drawer" v-bind:class="{ display: display }">
     <ul>
-      <li><router-link to="/" class="link">Главная</router-link></li>
-      <li><router-link to="/about" class="link">Кто мы</router-link></li>
       <li>
-        <router-link to="/services" class="link">Наши услуги</router-link>
+        <router-link to="/" class="link">&#127968;&nbsp;Главная</router-link>
       </li>
       <li>
-        <router-link to="/partners" class="link">Наши клиенты</router-link>
+        <router-link to="/about" class="link"
+          >&#128712;&nbsp;Кто мы</router-link
+        >
+      </li>
+      <li>
+        <router-link to="/services" class="link"
+          >&#128129;&nbsp;Наши услуги</router-link
+        >
+      </li>
+      <li>
+        <router-link to="/partners" class="link"
+          >&#128101;&nbsp;Наши клиенты</router-link
+        >
       </li>
       <li>
         <router-link to="/routes" class="link">
-          Карта маршрутов
+          &#9941;&nbsp;Карта маршрутов
         </router-link>
       </li>
       <li>
-        <router-link to="/contacts" class="link">Наши Контакты</router-link>
+        <router-link to="/contacts" class="link"
+          >&#9990;&nbsp;Наши Контакты</router-link
+        >
+      </li>
+      <li>
+        <router-link to="/form" class="link">
+          &#9993;&nbsp;Оставить заявку
+        </router-link>
       </li>
     </ul>
   </nav>

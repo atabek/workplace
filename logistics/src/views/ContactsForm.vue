@@ -7,8 +7,12 @@
       <form
         class="gform"
         @submit.prevent="onSubmit"
-        action="https://script.google.com/macros/s/AKfycbz0YuOmgKE6uVOWiOafPRbA52MuROxr34z0Qv6yIzj0OCzj9kWd/exec"
+        action="https://script.google.com/macros/s/AKfycbyGdpWSagzzr4nA6C4ENzdekN6RJ973prmqwHU7MA/exec"
       >
+        <!-- 
+          new - https://script.google.com/macros/s/AKfycbyGdpWSagzzr4nA6C4ENzdekN6RJ973prmqwHU7MA/exec
+          old - https://script.google.com/macros/s/AKfycbz0YuOmgKE6uVOWiOafPRbA52MuROxr34z0Qv6yIzj0OCzj9kWd/exec
+        -->
         <!-- change the form action to your script url -->
         <div class="form-elements">
           <div class="form-element-item">
@@ -32,7 +36,6 @@
               name="email"
               type="email"
               value=""
-              required
               placeholder="your.name@email.com"
             />
           </div>
@@ -57,14 +60,23 @@
           </div>
 
           <button class="btn with-border">
-            <span>&#10173;&nbsp;Send</span>
+            <span>&#10173;&nbsp;Отправить</span>
           </button>
           <!-- Customise the Thankyou Message People See when they submit the form: -->
         </div>
       </form>
     </div>
     <div v-else class="message">
-      <h2><em>Thanks</em> for contacting us! We will get back to you soon!</h2>
+      <h2>
+        <em>Спасибо!</em> Заявка принята. В ближайшее время с Вами свяжется наш
+        менеджер.
+      </h2>
+      <div class="mt1 mb1">
+        <button class="btn with-border">&#128260;&nbsp;Повторить</button>
+        <router-link to="/">
+          <button class="btn with-border">&#127968;&nbsp;Назад</button>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -153,6 +165,7 @@ export default {
 </script>
 <style lang="scss">
 .form-container {
+  min-height: 90vh;
   font-size: 1.5rem;
 }
 .form-elements {
@@ -190,5 +203,14 @@ hr {
 }
 .with-border {
   border: 1px solid steelblue;
+}
+.message {
+  margin: 2rem 0;
+}
+.mb1 {
+  margin-bottom: 1rem;
+}
+.mt1 {
+  margin-top: 1rem;
 }
 </style>

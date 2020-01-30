@@ -33,6 +33,11 @@
                 >Наши Контакты</router-link
               >
             </li>
+            <li>
+              <router-link to="/form" class="link"
+                >&#9993;&nbsp;Оставить заявку</router-link
+              >
+            </li>
           </ul>
         </div>
       </nav>
