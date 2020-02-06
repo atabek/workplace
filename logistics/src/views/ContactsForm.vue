@@ -102,6 +102,7 @@ export default {
           return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
         })
         .join("&");
+      this.$router.push({ path: "message" });
       xhr.send(encoded);
       // this.showForm = false;
     },

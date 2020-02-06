@@ -6,8 +6,10 @@
         менеджер.
       </h3>
       <div class="mt1 mb1">
-        <router-link class="btn with-border">
-          &#128260;&nbsp;Отправить заново
+        <router-link to="form">
+          <button class="btn with-border">
+            &#128260;&nbsp;Отправить заново
+          </button>
         </router-link>
         <router-link to="/">
           <button class="btn with-border">&#127968;&nbsp;Назад</button>
