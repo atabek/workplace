@@ -1,9 +1,9 @@
 <template>
-  <div class="container min-height-100vh">
+  <div class="container min-height-50vh">
     <div class="row centered-text">
       <h2 class="heading-secondary">Форма заявки</h2>
     </div>
-    <div v-if="showForm" class="form-container">
+    <div class="form-container">
       <form
         class="gform"
         @submit.prevent="onSubmit"
@@ -62,21 +62,8 @@
           <button class="btn with-border">
             <span>&#10173;&nbsp;Отправить</span>
           </button>
-          <!-- Customise the Thankyou Message People See when they submit the form: -->
         </div>
       </form>
-    </div>
-    <div v-else class="message">
-      <h2>
-        <em>Спасибо!</em> Заявка принята. В ближайшее время с Вами свяжется наш
-        менеджер.
-      </h2>
-      <div class="mt1 mb1">
-        <button class="btn with-border">&#128260;&nbsp;Повторить</button>
-        <router-link to="/">
-          <button class="btn with-border">&#127968;&nbsp;Назад</button>
-        </router-link>
-      </div>
     </div>
   </div>
 </template>
@@ -106,6 +93,9 @@ export default {
           form.reset();
         }
       };
+      xhr.onerror = function() {
+        alert("Error sending form data... Check your internet connection.");
+      };
       // url encode form data for sending as post data
       var encoded = Object.keys(data)
         .map(function(k) {
@@ -113,7 +103,7 @@ export default {
         })
         .join("&");
       xhr.send(encoded);
-      this.showForm = false;
+      // this.showForm = false;
     },
     getFormData(form) {
       var elements = form.elements;
@@ -160,6 +150,9 @@ export default {
       formData.formGoogleSend = form.dataset.email || ""; // no email by default
       return { data: formData, honeypot: honeypot };
     }
+    // showFormClickHandler() {
+    //   this.showForm = true;
+    // }
   }
 };
 </script>
@@ -184,6 +177,7 @@ form textarea {
   display: inline-block;
   border: none;
   background: #f1f1f1;
+  resize: none;
 }
 form input[type="text"]:focus,
 form input[type="email"]:focus,
@@ -202,9 +196,6 @@ hr {
 }
 .with-border {
   border: 1px solid steelblue;
-}
-.message {
-  margin: 2rem 0;
 }
 .mb1 {
   margin-bottom: 1rem;

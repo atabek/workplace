@@ -95,7 +95,7 @@ export default {
     margin-left: 0.5rem;
     transition: 0.2s ease-in;
     text-align: center;
-    &::last-child {
+    &:last-child {
       margin-left: 0;
     }
   }

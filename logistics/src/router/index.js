@@ -7,6 +7,8 @@ import Partners from "../views/Partners.vue";
 import Contacts from "../views/Contacts.vue";
 import Routes from "../views/Routes.vue";
 import ContactsForm from "../views/ContactsForm.vue";
+import Message from "../views/Message.vue";
+import NotFound from "../views/404.vue";
 
 Vue.use(VueRouter);
 
@@ -50,6 +52,16 @@ const routes = [
     path: "/form",
     name: "form",
     component: ContactsForm
+  },
+  {
+    path: "/message",
+    name: "message",
+    component: Message
+  },
+  {
+    path: "*",
+    name: "404",
+    component: NotFound
   }
 ];
 
