@@ -20,7 +20,7 @@
             </li>
             <li>
               <router-link to="/partners" class="link"
-                >Наши клиенты</router-link
+                >Наши партнеры</router-link
               >
             </li>
             <li>
