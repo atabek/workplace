@@ -6,6 +6,7 @@
     <div class="view">
       <router-view />
     </div>
+    <FixedContactFormButton />
     <Footer :contacts="contacts" />
   </div>
 </template>
@@ -14,6 +15,7 @@ import Toolbar from "./components/Toolbar.vue";
 import SideDrawer from "./components/SideDrawer/SideDrawer.vue";
 import Backdrop from "./components/Backdrop.vue";
 import Footer from "./components/Footer.vue";
+import FixedContactFormButton from "./components/FixedContactFormButton.vue";
 
 export default {
   name: "app",
@@ -21,7 +23,8 @@ export default {
     Toolbar,
     SideDrawer,
     Backdrop,
-    Footer
+    Footer,
+    FixedContactFormButton
   },
   data: function() {
     return {
